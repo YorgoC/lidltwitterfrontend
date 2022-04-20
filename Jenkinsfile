@@ -4,7 +4,7 @@ pipeline {
       ansiColor('xterm')
     }
         environment {
-            registry = "https://hub.docker.com/repository/docker/yorgoc/lidltwitter"
+            registry = "https://hub.docker.com/r/yorgoc/lidltwitter"
             registryCredential = 'dockerhub'
             dockerImage = ''
             scannerHome = tool 'sonarqube-scanner'
@@ -66,7 +66,7 @@ pipeline {
         stage('Deploy Image') {
           steps{
             script {
-                  docker.withRegistry('https://hub.docker.com/repository/docker/yorgoc/lidltwitter', registryCredential) {
+                  docker.withRegistry('https://registry.hub.docker.com/r/yorgoc/lidltwitter', registryCredential) {
                     dockerImage.push('frontend')
                   }
             }

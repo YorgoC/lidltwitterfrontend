@@ -14,4 +14,8 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  register(): void {
+    
+  }
+
 }

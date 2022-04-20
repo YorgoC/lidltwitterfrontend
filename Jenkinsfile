@@ -18,6 +18,7 @@ pipeline {
       steps { 
           bat 'npm install'
           bat 'npm i @angular/cdk'
+          bat 'npm install concurrently --save-dev'
             }
         }
         stage('Build') {
@@ -33,7 +34,7 @@ pipeline {
     }
          stage('e2e Testing') {
         steps {
-             bat 'npm run e2e' 
+             bat 'npm run cypress:ci' 
       }
     }
 

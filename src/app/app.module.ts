@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
@@ -14,7 +13,6 @@ import { AuthModule } from '@auth0/auth0-angular';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClient,
     AuthModule.forRoot({
       domain: 'lidltwitter.eu.auth0.com',
       clientId: 'eV3BGa9w8WpzYzzKN3gh0YgfPN5CPa6v'

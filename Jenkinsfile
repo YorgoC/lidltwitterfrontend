@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    options{
+      ansiColor('xterm')
+    }
         environment {
             registry = "https://hub.docker.com/r/yorgoc/lidltwitter"
             registryCredential = 'dockerhub'

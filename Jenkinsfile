@@ -5,6 +5,7 @@ pipeline {
             registryCredential = 'dockerhub'
             dockerImage = ''
             scannerHome = tool 'sonarqube-scanner'
+            nodejs = tool 'node'
         }
     stages {
         stage('Initialize'){
@@ -18,7 +19,6 @@ pipeline {
       steps { 
           bat 'npm install'
           bat 'npm i @angular/cdk'
-          bat 'npm install concurrently --save-dev'
             }
         }
         stage('Build') {

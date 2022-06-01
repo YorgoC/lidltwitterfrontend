@@ -1,6 +1,3 @@
 export class User{
-    constructor(
-        nickName: string,
-        authToken: string
-    ){}
+    constructor(id: number, username: string, mentionName: string, bio: string, role: string, location: string) {}
 }

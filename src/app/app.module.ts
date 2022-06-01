@@ -2,12 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RegisterComponent } from './register/register.component';
-import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
@@ -18,13 +14,23 @@ import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { AuthModule } from '@auth0/auth0-angular';
+import { Auth0Component } from './auth0/auth0.component';
+
+// Import the injector module and the HTTP client module from Angular
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+// Import the HTTP interceptor from the Auth0 Angular SDK
+import { AuthHttpInterceptor } from '@auth0/auth0-angular';
+import { RedirectPageComponent } from './redirect-page/redirect-page.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
+    Auth0Component,
+    RedirectPageComponent,
     
   ],
   imports: [
@@ -42,9 +48,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatListModule,
     LayoutModule,
     NgbModule,
+    AuthModule.forRoot({
+      domain: 'lidltwitter.eu.auth0.com',
+      clientId: 'eV3BGa9w8WpzYzzKN3gh0YgfPN5CPa6v'
+    }),
   ],
   providers: [
-    authInterceptorProviders
+    { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

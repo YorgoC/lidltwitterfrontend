@@ -1,0 +1,6 @@
+{
+    "domain": "lidltwitter.eu.auth0.com",
+    "clientId": "eV3BGa9w8WpzYzzKN3gh0YgfPN5CPa6v",
+    "audience": "lidltwitter.com",
+    "serverUrl": "http://localhost:6969"
+}

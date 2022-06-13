@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT } from '@angular/common';
 import { UserService } from '../_services/user.service';
+import { CheckUser } from '../DTOs/CheckUser';
 
 @Component({
   selector: 'app-auth0',
@@ -11,23 +12,29 @@ import { UserService } from '../_services/user.service';
 export class Auth0Component implements OnInit {
 
 
-
+  errorMessage = '';
+  
 
   constructor(public auth: AuthService, @Inject(DOCUMENT) public document: Document, private userService: UserService) {
-
-    this.auth.user$.subscribe((user) => {this.checkUser(user?.sub);
-    } ) 
+    this.auth.user$.subscribe((user) => {console.log(user?.sub);
+    } ) ;
+   
   }
+
 
   ngOnInit(): void {
   }
 
-  checkUser(authToken: string | undefined): any{
+  login(): void{
+    this.auth.loginWithRedirect(
+      {appState: { target: '/redirect' }}
+    );
+  }
 
-    if(authToken != undefined){
-      this.userService.checkUser(authToken);
-    }
-    
+  getUsers(): void{
+    this.userService.getUsers().subscribe(
+      
+    );
   }
 
 }

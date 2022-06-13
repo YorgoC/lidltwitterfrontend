@@ -1,0 +1,53 @@
+
+<div class="col-md-12">
+    <div class="card card-container">
+      <img
+        id="profile-img"
+        [src]='profilePicture'
+        class="profile-img-card"
+      />
+      <form
+        name="form"
+        (ngSubmit)="onSubmit()"
+        #f="ngForm"
+      >
+        
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="username"
+            class="form-control"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="mentionName">@Name</label>
+          <input
+            type="mentionName"
+            class="form-control"
+            name="mentionName"
+            [(ngModel)]="form.mentionName"
+            required
+          />
+        </div>
+        <div class="form-group">
+            <label for="bio">Write something about yourself!</label>
+            <textarea
+              id="bio-field"
+              type="bio"
+              class="form-control"
+              name="bio"
+              [(ngModel)]="form.bio"
+              required
+            >
+        </textarea>
+          </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Yep that's me!</button>
+        </div>
+      </form>
+  
+    </div>
+  </div>

@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit {
       this.userService.getUser(checkUser).subscribe(
         data=>{
           this.user = data;
+          console.log(data);
         },
         err =>{
             this.errorMessage = err.error.message;  
@@ -34,6 +35,5 @@ export class ProfileComponent implements OnInit {
       )
     }
   }
-
 
 }

@@ -29,6 +29,6 @@ export class UserService {
   }
   getUser(checkUserDto: CheckUser): Observable<User>{
     console.log("test")
-    return this.http.get<User[]>(API_URL);
+    return this.http.post<User>(API_URL +"/getuser", {...checkUserDto});
   }
 }

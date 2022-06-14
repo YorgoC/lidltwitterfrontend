@@ -65,7 +65,9 @@ import { LoginComponent } from './login/login.component';
       httpInterceptor: {
         allowedList: ['http://localhost:5021/users', 
                       'http://localhost:5021/tweets',
-                      'http://localhost:5021/users/auth0']
+                      'http://localhost:5021/users/auth0',
+                      'http://localhost:5021/users/getuser'
+                    ]
       }
       
     }),

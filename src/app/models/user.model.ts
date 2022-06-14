@@ -1,3 +1,3 @@
 export class User{
-    constructor(id: number, auth0Id: string, username: string, mentionName: string, bio: string, profilePicure: string, role: string, location: string) {}
+    constructor(id: number, auth0Id: string, public userName: string, public mentionName: string, public bio: string, public profilePicture: string, role: string, location: string) {}
 }

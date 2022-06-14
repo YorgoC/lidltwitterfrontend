@@ -1,3 +1,21 @@
-<div>
-    
-</div>
+
+<div class="col-md-12">
+    <div class="card card-container">
+      <img id="pic"
+        id="profile-img"
+        [src]='user?.profilePicture'
+        class="profile-img-card"
+      />
+        <div class="form-group">
+          <label for="username">Username: {{user?.userName}}</label>
+          
+        </div>
+        <div class="form-group">
+          <label for="mentionName">@Name: {{user?.mentionName}}</label>
+          
+        </div>
+        <div class="form-group">
+            <label for="bio">Bio: {{user?.bio}}</label>
+          </div>
+    </div>
+  </div>

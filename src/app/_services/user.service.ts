@@ -17,7 +17,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   registerUser(createUserDto: CreateUser): Observable<any>{
-    console.log("register user test");
     return this.http.post(API_URL, {...createUserDto});
   }
 
@@ -25,9 +24,11 @@ export class UserService {
     return this.http.post<boolean>(API_URL + '/auth0', {...checkUserDto});
   }
 
-  getUsers(): Observable<User[]>{
+  getExternalId(checkUserDto: CheckUser): Observable<number>{
+    return this.http.post<number>(API_URL + "/externalid", {...checkUserDto});
+  }
+  getUser(checkUserDto: CheckUser): Observable<User>{
     console.log("test")
     return this.http.get<User[]>(API_URL);
   }
-
 }

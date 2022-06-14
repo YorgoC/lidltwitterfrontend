@@ -31,10 +31,6 @@ export class Auth0Component implements OnInit {
     );
   }
 
-  getUsers(): void{
-    this.userService.getUsers().subscribe(
-      
-    );
-  }
+
 
 }

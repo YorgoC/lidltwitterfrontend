@@ -65,14 +65,8 @@ import { NewTweetComponent } from './new-tweet/new-tweet.component';
       domain: 'lidltwitter.eu.auth0.com',
       clientId: 'eV3BGa9w8WpzYzzKN3gh0YgfPN5CPa6v',
       audience: 'lidltwitter.com',
-      serverUrl: 'http://localhost:5021/users',
       httpInterceptor: {
-        allowedList: ['http://localhost:5021/users', 
-                      'http://localhost:5021/tweets',
-                      'http://localhost:5021/users/auth0',
-                      'http://localhost:5021/users/getuser',
-                      'http://localhost:5021/tweets/gettweets/*',
-                      'http://localhost:5021/tweets/tweet'
+        allowedList: ['*'
                     ]
       }
       

@@ -1,0 +1,40 @@
+<div class="root">
+    <div class="tweets-section">
+        <div class="tweet-wrapper">
+            <div class="tweets">
+                <div>
+
+                    <button (click)="onCreate()" class="btn btn-primary" style="background-color: yellow;" > Tweet!</button>
+                    </div>
+    
+                <div class="tweet" *ngFor="let tweet of tweetSection.tweets">
+                    <div class="header">
+                        <div class="picture">
+                            <img id="pic"
+                                    id="profile-img"
+                                    [src]='tweet.profilePicture'
+                                    class="profile-img-card"
+                                />
+                        </div>
+                        <div class="username-mentionname">
+                            {{tweet.userName}} @{{tweet.mentionName}}
+                        </div>
+                        <div class="date">
+                            {{tweet.dateTime}}
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="tweettext">
+                            {{tweet.text}}
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="lrc">
+                            likes: {{tweet.likes}} retweets: {{tweet.retweets}} comments: {{tweet.comments}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

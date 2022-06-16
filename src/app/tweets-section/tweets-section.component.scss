@@ -1,0 +1,118 @@
+.root {
+    height: 100vh;
+  }
+  
+  .tweets-section{
+
+  
+    // Override Automatic Minimum Size
+    // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+
+    .tweet-wrapper{
+
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+
+        .tweets{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            button{
+                margin-top: 2px;
+                color: blue;
+                font-weight: 600;
+                margin-bottom: 2px;
+                height: 50px;
+                width: 579px;
+                border-width: 2px;
+                border-color: red;
+                border-radius: 10px;
+            }
+            
+
+            .tweet{
+                
+                border-width: 2px;
+                padding: 1%;
+                display: block;
+                flex-direction: column;
+                flex-grow: 1;
+                flex-basis: 0; // to force the columns to all be the same size, regardless of content
+                min-width: 300px;
+                width: 40%;
+                margin: 0px;
+                border-style: solid;
+                border-color: red;
+                border-radius: 10px;
+                color: blue;
+                
+
+        
+                background: yellow;
+
+                .header{
+                    display: flex;
+                    height: 20%;
+                    .username-mentionname{
+                        margin-top: 10px;
+                        font-size: 25px;
+                        height: fit-content;
+                    }
+                    
+                }
+                .content{
+                    display: flex;
+                    min-height: auto;
+                    height: 40%;
+                    margin-top: auto;
+                    margin-left: 16px;
+                    .tweettext{
+                        height: fit-content;
+                        font-size: 20px;
+                        padding-top: 40px;
+                    }
+                }
+
+                .bottom{
+                    display: flex;
+                    margin-top: 15px;
+                    height: 30%;
+                    align-content: center;
+                    .lrc{
+                        margin-top: auto;
+                        margin-left: auto;
+                    }
+                }
+                
+                
+
+                
+
+            }
+            
+
+        }
+        
+
+    }
+
+
+   
+  }
+
+  .profile-img-card {
+    width: 50x;
+    height: 50px;
+    margin: 0 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border-color: red;
+  }
+

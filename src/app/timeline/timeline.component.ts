@@ -46,15 +46,18 @@ export class TimelineComponent implements OnInit {
   createTweet(): void{
     if(this.externalId != undefined){
       const { text } = this.form;
-      this.tweetService.createTweet(new CreateTweet(this.externalId, text)).subscribe(
-        data =>{
-          
-        },
-        (err) => { this.errorMessage = err.error.message;
-
-        }
-      )
+      if(this.auth0Id != undefined){
+        this.tweetService.createTweet(new CreateTweet(this.auth0Id, text)).subscribe(
+          data =>{
+            
+          },
+          (err) => { this.errorMessage = err.error.message;
+  
+          }
+        )
+      }
     }
+      
   }
 
 }

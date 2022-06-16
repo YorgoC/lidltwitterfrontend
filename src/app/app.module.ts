@@ -28,6 +28,8 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { LoginComponent } from './login/login.component';
+import { TweetsSectionComponent } from './tweets-section/tweets-section.component';
+import { NewTweetComponent } from './new-tweet/new-tweet.component';
 
 
 
@@ -40,6 +42,8 @@ import { LoginComponent } from './login/login.component';
     SignUpComponent,
     RedirectComponent,
     LoginComponent,
+    TweetsSectionComponent,
+    NewTweetComponent,
     
   ],
   imports: [
@@ -66,7 +70,9 @@ import { LoginComponent } from './login/login.component';
         allowedList: ['http://localhost:5021/users', 
                       'http://localhost:5021/tweets',
                       'http://localhost:5021/users/auth0',
-                      'http://localhost:5021/users/getuser'
+                      'http://localhost:5021/users/getuser',
+                      'http://localhost:5021/tweets/gettweets/*',
+                      'http://localhost:5021/tweets/tweet'
                     ]
       }
       

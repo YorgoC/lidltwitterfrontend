@@ -7,7 +7,7 @@ import { CreateUser } from '../DTOs/CreateUser';
 
 
 
-const API_URL = 'http://localhost:5021/users';
+const API_URL = 'http://gateway-clusterip-srv:80/users';
 
 @Injectable({
   providedIn: 'root'

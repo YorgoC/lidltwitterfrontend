@@ -5,7 +5,7 @@ import { CreateTweet } from '../DTOs/CreateTweet';
 import { ReadTweet } from '../DTOs/ReadTweet';
 
 
-const API_URL = 'http://localhost:5021/tweets';
+const API_URL = 'http://gateway-clusterip-srv:80/tweets';
 
 @Injectable({
   providedIn: 'root'

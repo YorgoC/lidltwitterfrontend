@@ -2,15 +2,12 @@ name: Frontend CI
 
 on:
   push:
-    paths:
-      - 'src/**'
-    branches: 
-      - development
-      - master
+    branches:
       - Deploy
-      - feat/**
   pull_request:
-    branches: [ master ]
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - Deploy
 jobs:
   build:
     runs-on: ubuntu-latest
